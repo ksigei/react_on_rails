@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getGreeting } from "../redux/actions";
+import { getGreeting } from "../redux/reducer";
 
 export default function Greeting() {
   const dispatch = useDispatch();
