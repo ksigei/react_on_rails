@@ -3,7 +3,7 @@ const POST_GREETING = 'POST_GREETING';
 
 const getGreeting = () => {
     return (dispatch) => {
-        return fetch('http://localhost:3000/greeting')
+        return fetch('http://localhost:3000/greetings')
             .then((response) => response.json())
             .then((json) => {
                 dispatch({
