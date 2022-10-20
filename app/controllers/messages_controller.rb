@@ -1,20 +1,15 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
-    render json: @messages
+    # @messages random message from the database
+    @message = Message.all.sample
+    render json: @message
   end
 
   def new
-    @message = Message.new
   end
 
   def create
-    @message = Message.new(message_params)
-    if @message.save
-      render json: @message
-    else
-      render json: @message.errors
-    end
+ 
   end
 
   def show
@@ -29,8 +24,4 @@ class MessagesController < ApplicationController
   def destroy
   end
 
-  private
-    def message_params
-      params.require(:message).permit(:greeting)
-    end
 end
